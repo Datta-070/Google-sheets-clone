@@ -5,17 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spread Sheet</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 </head>
 <body>
     <div id="root">
-        <div id="header">
+        <div id="options">
+            <form class="form">
 
+                <select name="fontFamily">
+                    <option value="A">Monkoi</option>
+                    <option value="B">Sans Serif</option>
+                    <option value="C">Arial</option>
+                </select>
+
+                <input type="number" name="fontSize" min="8" max="32" value="16">
+                <div>
+                <label for="bold">
+                    <span class="material-icons">format_bold</span>
+                </label>
+                <input type="checkbox" id="bold" name="isBold">
+                </div>
+
+                <div>
+                <label for="italic">
+                    <span class="material-icons">format_italic</span>
+                </label>
+                <input type="checkbox" id="italic" name="isItalic">
+                </div>
+
+                <div>
+                <label for="underline">
+                    <span class="material-icons">format_underlined</span>
+                </label>
+                <input type="checkbox" id="underline" name="isUnderline">
+                </div>
+
+                <div>
+                <label for="left">
+                    <span class="material-icons">format_align_left</span>
+                </label>
+                <input type="radio" name="align" value="left" id="left">
+                <label for="center">
+                    <span class="material-icons">format_align_center</span>
+                </label>
+                <input type="radio" name="align" value="center" id="center">
+                <label for="right">
+                    <span class="material-icons">format_align_right</span>
+                </label>
+                <input type="radio" name="align" value="right" id="right">
+                </div>
+
+                <div>
+                    <label for="textcolor">Text Color</label>
+                    <input type="color" name="textColor" id="textcolor">
+                </div>
+
+                <div>
+                    <label for="bgcolor">BG Color</label>
+                    <input type="color" name="bgColor" id="bgcolor">
+                </div>
+
+            </form>
+        </div>
+        <div id="header">
+            <div class="head-cell first"></div>
         </div>
         <div id="body">
             <div id="sno"></div>
-            <div id="cells-container"></div>
+            <div id="body-container"></div>
         </div>
-        <div class="plate"></div>
     </div>
     <script src="script.js"></script>
 </body>

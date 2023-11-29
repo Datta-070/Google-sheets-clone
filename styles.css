@@ -8,6 +8,7 @@
     position: relative;
 }
 #header{
+    width: fit-content;
     display: flex;
     text-align: center;
     position: sticky;
@@ -19,12 +20,17 @@
     display: none;
   }
   .head-cell:first-child{
+    background-color: red;
+    position: sticky;
+    top: 0;
+    left: 0;
     min-width: 40px !important;
+    padding: 0.1px;
   }
 .head-cell{
     min-width: 100px;
     height:30px;
-    border: 1px solid #C4C7C5;
+    border: 0.1px solid #C4C7C5;
     border-top-width: 2px;
     text-align: center;
     display: flex;
@@ -43,22 +49,29 @@
     background-color: #fff;
 }
 .sno-cell{
+    min-width: 40px;
     height: 30px;
-    border: 1px solid grey;
+    border: 0.1px solid grey;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-#cells-container{
-
+.row{
+    display: flex;
 }
-.plate{
-    width: 40px;
-    height: 30px;
-    background-color: white;
-    border: 1px solid #C4C7C5;
-    border-top-width: 2px;
-    position: absolute;
-    top: 0;
-    left: 0;
+.cell{
+    min-width: 100px;
+    height:30px;
+    border: 0.1px solid #C4C7C5;
+}
+.cell:focus{
+    border-radius: 0;
+    outline: 2px solid black;
+}
+.form{
+    display: flex;
+    padding: 30px;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
 }
