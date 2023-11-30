@@ -1,81 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spread Sheet</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-</head>
-<body>
-    <div id="root">
-        <div id="options">
-            <form class="form">
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="options">
+      <form class="form">
+        <select name="fontFamily" class="input">
+          <option value="poppins-medium">Regular</option>
+          <option value="poppins-regular">Medium</option>
+          <option value="poppins-extra-bold">Extra Bold</option>
+        </select>
 
-                <select name="fontFamily">
-                    <option value="A">Monkoi</option>
-                    <option value="B">Sans Serif</option>
-                    <option value="C">Arial</option>
-                </select>
-
-                <input type="number" name="fontSize" min="8" max="32" value="16">
-                <div>
-                <label for="bold">
-                    <span class="material-icons">format_bold</span>
-                </label>
-                <input type="checkbox" id="bold" name="isBold">
-                </div>
-
-                <div>
-                <label for="italic">
-                    <span class="material-icons">format_italic</span>
-                </label>
-                <input type="checkbox" id="italic" name="isItalic">
-                </div>
-
-                <div>
-                <label for="underline">
-                    <span class="material-icons">format_underlined</span>
-                </label>
-                <input type="checkbox" id="underline" name="isUnderline">
-                </div>
-
-                <div>
-                <label for="left">
-                    <span class="material-icons">format_align_left</span>
-                </label>
-                <input type="radio" name="align" value="left" id="left">
-                <label for="center">
-                    <span class="material-icons">format_align_center</span>
-                </label>
-                <input type="radio" name="align" value="center" id="center">
-                <label for="right">
-                    <span class="material-icons">format_align_right</span>
-                </label>
-                <input type="radio" name="align" value="right" id="right">
-                </div>
-
-                <div>
-                    <label for="textcolor">Text Color</label>
-                    <input type="color" name="textColor" id="textcolor">
-                </div>
-
-                <div>
-                    <label for="bgcolor">BG Color</label>
-                    <input type="color" name="bgColor" id="bgcolor">
-                </div>
-
-            </form>
+        <input
+          class="input"
+          type="number"
+          name="fontSize"
+          min="8"
+          max="24"
+          value="16"
+        />
+        <div>
+          <input type="checkbox" id="bold" name="isBold" />
+          <label class="material-icons">format_bold</label>
         </div>
-        <div id="header">
-            <div class="head-cell first"></div>
+
+        <div>
+          <input type="checkbox" id="italic" name="isItalic" />
+          <label class="material-icons">format_italic</label>
         </div>
-        <div id="body">
-            <div id="sno"></div>
-            <div id="body-container"></div>
+
+        <div>
+          <input type="checkbox" id="underline" name="isUnderline" />
+          <label class="material-icons">format_underline</label>
         </div>
+
+        <div>
+          <input type="radio" name="align" value="left" id="left" checked />
+          <label class="material-icons">format_align_left</label>
+          <input type="radio" name="align" value="center" id="center" />
+          <label class="material-icons">format_align_center</label>
+          <input type="radio" name="align" value="right" id="right" />
+          <label class="material-icons">format_align_right</label>
+        </div>
+
+        <div>
+          <input type="color" name="textColor" id="textcolor" />
+          <label for="textColor" class="material-icons"
+            >format_color_text</label
+          >
+        </div>
+
+        <div>
+          <input type="color" value="#ffffff" name="bgColor" id="bgColor" />
+          <label for="textColor" class="material-icons"
+            >format_color_fill</label
+          >
+        </div>
+        <span onclick="exportData()" id= "export" class="material-icons">
+            cloud_upload
+            </span>
+        <span id= "export" class="material-icons">
+                cloud_download
+            </span>
+      </form>
     </div>
+    <div id="cell-state">
+      <div id="active-cell">null</div>
+      <input type="text" placeholder="f(x)" />
+    </div>
+    <div id="root">
+      <div id="header">
+        <div class="head-cell first"></div>
+      </div>
+      <div id="body">
+        <div id="sno"></div>
+        <div id="body-container"></div>
+      </div>
+    </div>
+
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
