@@ -1,130 +1,299 @@
-*{
+* {
     margin: 0;
-    font-family: poppins-regular;
+    padding: 0;
+    font-family: Poppins;
 }
-#root{
-    height: 90vh;
-    width: 100vw;
-    overflow: scroll;
-    position: relative;
-}
-#header{
-    width: fit-content;
+
+ul {
+    align-items: center;
     display: flex;
-    position: sticky;
-    top: 0;
-    z-index: 120;
-    background-color: #fff;
+    color: black;
+    padding-top: 3px;
 }
-#root::-webkit-scrollbar {
-    display: none;
-  }
-  .head-cell:first-child{
-    background-color: #fff;
-    position: sticky;
-    top: 0;
-    left: 0;
-    min-width: 40px !important;
-    padding: 0.1px;
-  }
-.head-cell{
-    min-width: 200px;
-    height:30px;
-    border: 0.1px solid #C4C7C5;
-    border-top-width: 2px;
+
+.active,
+li:hover {
+    background: #eeeeee;
     text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    color: black;
 }
-#body{
+
+.btn,
+#downloadBtn,
+#uploadBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.active-sheet {
+    background: #bbbebc;
+    border-radius: 12px;
+    text-decoration: underline;
+}
+
+li {
+    font-family: Roboto;
+    padding-inline: 20px;
+    display: flex;
+    align-items: end;
+    cursor: pointer;
+    list-style: none;
+    color: white;
+    padding-top: 5px;
+}
+
+#activeElement {
+    width: 100px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.root-container {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    position: relative;
+    top: 120px;
+    flex-direction: column;
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    padding-bottom: 2.5rem;
+}
+
+.body {
+    position: relative;
+    display: flex;
+}
+
+.header {
+    z-index: 1;
+    width: 100%;
+    min-height: 120px;
+    background: white;
+    position: fixed;
+    top: 0;
     display: grid;
-    grid-template-columns: 41px auto;
+    grid-template-rows: auto auto auto;
 }
-#sno{
+
+.footer {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    height: 2.5rem;
+    width: 100%;
+    background: white;
+    padding-inline: 20px;
+    align-items: center;
+    border-top: 2px solid #cbcecc;
+    gap: 15px;
+}
+
+.top {
+    z-index: 1;
     position: sticky;
-    left: 0 !important;
-    z-index: 100;
-    background-color: #fff;
-}
-.sno-cell{
-    min-width: 40px;
-    height: 30px;
-    border: 0.1px solid grey;
+    top: 120px;
+    left: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    background: white;
 }
-.row{
-    display: flex;
+
+.top :first-child {
+    position: sticky;
+    top: 120px;
+    left: 0;
+    background: whitesmoke;
 }
-.cell{
-    min-width: 200px;
-    height:30px;
-    border: 0.1px solid #C4C7C5;
-    cursor: pointer;
+
+.sno {
+    position: sticky;
+    left: 0;
+    top: 0;
+    width: fit-content;
 }
-.cell:focus{
-    outline: 2px solid #1B72E8;
+
+.right {
+    overflow: auto;
+    width: 100%;
+    height: fit-content;
+    background: yellowgreen;
 }
-.form{
-    display: flex;
-    padding: 30px;
-    justify-content: center;
-    gap: 20px;
-    align-items: center;
+
+.right:hover {
+    cursor: crosshair;
 }
-input:checked + label{
-    background-color: #EDF2FA;
-}
-input[type="checkbox"], input[type="radio"], input[type="color"]{
-    position: absolute;
-    width: 3rem;
-    height: 3rem;
-    opacity: 0;
-    cursor: pointer;
-}
-input[type="checkbox"] + label, input[type="radio"] + label{
+
+.cell {
+    width: 150px;
+    height: 21px;
     padding: 5px;
-    border-radius: 2px;
-}
-.input{
-    padding: 5px;
-    min-width: 100px;
-}
-.input:focus{
+    background: white;
+    border: 2px solid #f4f4f4;
     outline: none;
 }
-#cell-state{
+
+
+.top-cell,
+.sno-cell {
     display: flex;
-    gap: 20px;
-    padding: 10px 100px;
     align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 2px solid #dedfde;
 }
-#cell-state input{
+
+.main-row {
+    display: flex;
+}
+
+.top-cell {
+    height: 23px;
+}
+
+.sno-cell,
+.top :first-child {
+    width: 35px;
+}
+
+.main-cell {
+    max-width: 150px;
+    max-height: 21px;
+    overflow: auto;
+}
+
+.main ::-webkit-scrollbar {
+    display: none;
+}
+
+.tool-row {
+    display: flex;
+    gap: 15px;
+    padding-left: 52px;
+}
+
+.hrow {
+    background: #eeeeee;
+    display: flex;
+    align-items: end;
+    padding: 15px 0px 10px 20px;
+}
+
+.hrow1 {
+    display: flex;
+    background: #1d7e67;
+    padding-left: 23px;
+}
+
+.hrow3 {
+    padding-top: 0;
+    gap: 12px;
+}
+
+.hrow3 input {
+    height: 100%;
+}
+
+.hrow3 :nth-child(3) {
     flex-grow: 1;
-    padding: 10px;
 }
-#cell-state div{
-    background-color: #EDF2FA;
-    padding: 10px;
-}
-#cell-state input:focus{
+
+select,
+input {
+    border: none;
+    border-radius: 2px;
     outline: none;
+    background: white;
 }
-#export{
+
+.option-btn {
+    padding: 2px;
+}
+
+.disp {
+    display: none;
+}
+
+
+#fontSize {
+    padding-left: 20px !important;
+    text-align: start !important;
+}
+
+.option-btn:hover {
+    background: #cbcecc;
     cursor: pointer;
-    font-size: 32px !important;
+    border-radius: 5px;
 }
-@font-face{
-    font-family: poppins-regular;
-    src: url("./Poppins/Poppins-Regular.ttf");
+
+.disp:checked+label {
+    border-radius: 5px;
+    background: #cbcecc;
 }
-@font-face{
-    font-family: poppins-extra-bold;
-    src: url("./Poppins/Poppins-ExtraBold.ttf");
+
+.tools {
+    display: flex;
+    gap: 30px;
 }
-@font-face{
-    font-family: poppins-medium;
-    src: url("./Poppins-Medium.ttf");
+
+.sheets-folder-cont {
+    display: flex;
+    gap: 5px;
+}
+
+#pasteBtn,
+#cutBtn,
+#copyBtn {
+    cursor: pointer;
+}
+
+
+.sheet-btn {
+    background: none;
+    border: none;
+    padding: 4px 9px;
+    border-radius: 5px;
+    color: black;
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+}
+
+.current-sheet {
+    background: #89beffc6;
+}
+img{
+    background-color: whitesmoke;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+@font-face {
+    font-family: Inter;
+    src: url(./fonts/Inter-Regular.ttf);
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url(./fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: Nunito;
+    src: url(./fonts/Nunito-Regular.ttf);
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url(./fonts/Poppins-Regular.ttf);
 }
